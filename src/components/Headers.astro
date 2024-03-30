@@ -108,12 +108,12 @@ const scrollHeader = () => {
 window.addEventListener("scroll", scrollHeader);
 
 const activeLink = () => {
-  const sections = document.querySelectorAll("section");
-  const navLinks = document.querySelectorAll(".nav__link");
+  const sections = document.querySelectorAll<HTMLElement>("section");
+  const navLinks = document.querySelectorAll<HTMLElement>(".nav__link");
 
   let current = "home";
 
-  sections.forEach((section) => {
+  sections.forEach((section:any) => {
     const sectionTop = section.offsetTop;
 
     if (scrollY >= sectionTop - 60) {
@@ -121,7 +121,7 @@ const activeLink = () => {
     }
   });
 
-  navLinks.forEach((item) => {
+  navLinks.forEach((item:any) => {
     item.classList.remove("text-secondaryColor");
     if (item.href.includes(current)) {
       item.classList.add("text-secondaryColor");
