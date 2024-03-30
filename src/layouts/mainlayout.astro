@@ -1,0 +1,72 @@
+---
+import { ViewTransitions } from 'astro:transitions';
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--~~~~~~~~~~~~~~~ Favicon ~~~~~~~~~~~~~~~-->
+    <link rel="shortcut icon" href="/img/images/ojalogonobg.png" type="image/x-icon" />
+
+    <!--~~~~~~~~~~~~~~~ Font Awesome ~~~~~~~~~~~~~~~-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!--~~~~~~~~~~~~~~~ Remix Icon ~~~~~~~~~~~~~~~-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <!--  Swiper's CSS -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+  />
+    <!--~~~~~~~~~~~~~~~ CSS ~~~~~~~~~~~~~~~-->
+    <ViewTransitions />
+
+    <title>Oja.ng - The best place to order fresh food items</title>
+  </head>
+  <body class="text-whiteColor bg-primaryColor tracking-wider font-dmsans dark:bg-darkColor">
+   
+    <slot/>
+    <!--~~~~~~~~~~~~~~~ Scroll Up ~~~~~~~~~~~~~~~-->
+    <a href="#" class="fixed right-4 -bottom-1/2 bg-secondaryColor shadow-sm inline-block px-4 py-2 rounded-full text-lg text-blackColor z-50 hover:-translate-y-1 ease-in duration-200" id="scroll-up">
+      <i class="fa-solid fa-arrow-up"></i>
+    </a>
+
+    
+  </body>
+</html>
+
+
+<script>
+  const scrollUp = () => {
+  const scrollUpBtn = document.getElementById("scroll-up");
+
+  if (scrollY >= 250) {
+    scrollUpBtn!.classList.remove("-bottom-1/2");
+    scrollUpBtn!.classList.add("bottom-4");
+  } else {
+    scrollUpBtn!.classList.add("-bottom-1/2");
+    scrollUpBtn!.classList.remove("bottom-4");
+  }
+};
+window.addEventListener("scroll", scrollUp);
+
+
+
+</script>
+
